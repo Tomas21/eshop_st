@@ -1,0 +1,35 @@
+<h1>Admin Produktovvvv</h1>
+<p>Správa a úprava produktov</p>
+
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Názov</th>
+        <th>Popis</th>
+        <th>Cena</th>
+        <th>Fotka</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |p| %>
+      <tr>
+        <td><%= link_to "#{p.name}", admin_product_path(p) %></td>
+        <td><%= p.description %></td>
+        <td><%= p.price %></td>
+        <td><%= p.image_url %></td>
+        <td>
+          <%= link_to "<i class='glyphicon glyphicon-eject'> Uprav".html_safe, edit_admin_product_path(p), class: "btn btn-warning btn-xs" %>
+           
+          <%= link_to "<i class='glyphicon glyphicon-eject'>  Zmaž".html_safe, admin_product_path(p), method: "delete", confirm: "Určite zmazať #{p.name} ?", class: "btn btn-danger btn-xs" %>
+        </td>
+
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>
+
+<%= link_to "Pridať", new_admin_product_path %>

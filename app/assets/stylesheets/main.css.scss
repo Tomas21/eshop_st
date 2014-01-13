@@ -1,0 +1,16 @@
+$dark: darken(#fff, 85);
+
+.header {
+  background-color: $dark;
+  padding: 10px 0;
+
+  .nav {
+    a {
+      color: #fff;
+    }
+
+    a:hover {
+      background-color: gray;
+    }
+  }
+}

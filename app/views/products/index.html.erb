@@ -1,0 +1,26 @@
+<h1>Zoznam produktov</h1>
+<p>všetko, čo je aj nie je k dispozícii</p>
+
+<div class="row">
+  <% @products.each do |p| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="well course">
+          
+          <div class="row">
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <h2><%= p.name %></h2>
+              <p><%= p.description %></p>
+              <p>Cena: <%= p.price %></p>
+            </div>
+            
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><p>
+              <%= image_tag("#{p.image_url}") %></p>
+            </div>
+
+          </div>
+   
+      </div>
+    </div>
+  <% end %>
+</div>
